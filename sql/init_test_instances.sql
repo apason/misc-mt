@@ -5,9 +5,9 @@
 
 # 3 user examples. 2 active and one banned. One active has already a token assigned.
 INSERT INTO user 
-	(id, email, password, enabled, token, create_time)
+	(id, email, password, enabled, create_time)
 	VALUES 
-	(1, "matti.meikalainen@gmail.com", "password1", true, "tokeniii", NOW())
+	(1, "matti.meikalainen@gmail.com", "password1", true, NOW())
 ;
 
 INSERT INTO user 
