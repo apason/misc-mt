@@ -13,13 +13,13 @@ INSERT INTO user
 INSERT INTO user 
 	(id, email, password, enabled, create_time)
 	VALUES
-	(2, "maija.meikalainen@helsinki.fi", "password2", true, "maija.meikalainen@helsinki.fi", NOW())
+	(2, "maija.meikalainen@helsinki.fi", "password2", true, NOW())
 ;
 
 INSERT INTO user
 	(id, email, password, enabled, create_time)
 	VALUES
-	(3, "trolli@peikko.banned", "password3", false, "trolli@peikko.banned", NOW())
+	(3, "trolli@peikko.banned", "password3", false, NOW())
 ;
 
 # 3 test subusers.
