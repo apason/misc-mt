@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS answer
     loaded DATETIME,
     enabled TINYINT(1) NOT NULL,
     task_id INT NOT NULL,
-    user_id INT NOT NULL,
+    subuser_id INT NOT NULL,
     uri VARCHAR(255) NOT NULL,
     PRIMARY KEY(id)
 );
@@ -25,8 +25,9 @@ CREATE TABLE IF NOT EXISTS subuser
 (
     id INT NOT NULL AUTO_INCREMENT,
     nick VARCHAR(255) NOT NULL,
+    user_id INT NOT NULL,
     PRIMARY KEY(id)
-)
+);
 
 CREATE TABLE IF NOT EXISTS user
 (
