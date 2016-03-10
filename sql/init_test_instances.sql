@@ -22,7 +22,7 @@ INSERT INTO user
 	(3, "trolli@peikko.banned", "password3", false, NOW())
 ;
 
-# 3 test subusers.
+# 3 subuser test-examples pointing to different users. Two of them have the same nick but pointing to diferent user.
 
 INSERT INTO subuser
        (nick, user_id)
@@ -74,7 +74,7 @@ INSERT INTO task
 	(3, NOW(), 'explosion.mp4', 2, true)
 ;
 
-# A few test answers for enabled users (note that all instances does not have correct uri
+# A few test answers for enabled users (note that all instances does not have correct uri)
 INSERT INTO answer
 	(issued, id, loaded, enabled, task_id, subuser_id, uri)
 	VALUES
