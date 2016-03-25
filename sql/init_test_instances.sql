@@ -42,61 +42,61 @@ INSERT INTO subuser
        ("Pekka", 2)
 ;       
 
-# 2 tesst categories. (note that background images are not uploaded to server yet.
+# 2 test categories.
 INSERT INTO category
-	(id, name, bg_uri)
+	(id, name)
 	VALUES
-	(1, 'test_category', 'test.png')
+	(1, 'test_category')
 ;
 
 INSERT INTO category
-	(id, name, bg_uri)
+	(id, name)
 	VALUES
-	(2, 'fysiikka', 'fys.png')
+	(2, 'fysiikka')
 ;
 
-# 3 task examples. (note that only the first has a correct uri field) One has default value (not assigned) in field info.
+# 3 task examples. One, id 3, has the default value (not assigned) for the field info.
 INSERT INTO task
-	(id, loaded, uri, category_id, enabled, info)
+	(id, loaded, category_id, enabled, info)
 	VALUES
-	(1, NOW(), 'VID_20160201_150600.mp4', 1, true, "tehtävä1")
-;
-
-INSERT INTO task
-	(id, loaded, uri, category_id, enabled, info)
-	VALUES
-	(2, NOW(), 'not_working_yet.mp4', 1, false, "tehtävä2")
+	(1, NOW(), 1, true, "tehtävä1")
 ;
 
 INSERT INTO task
-	(id, loaded, uri, category_id, enabled)
+	(id, loaded, category_id, enabled, info)
 	VALUES
-	(3, NOW(), 'explosion.mp4', 2, true)
+	(2, NOW(), 1, false, "tehtävä2")
 ;
 
-# A few test answers for enabled users (note that all instances does not have correct uri)
-INSERT INTO answer
-	(issued, id, loaded, enabled, task_id, subuser_id, uri)
+INSERT INTO task
+	(id, loaded, category_id, enabled)
 	VALUES
-	(NOW(),1, NOW(), true, 1, 2, 'VID_20160201_150600.mp4')
+	(3, NOW(), 2, true)
 ;
 
+# 4 test answers for enabled users.
 INSERT INTO answer
-	(issued, id, loaded, enabled, task_id, subuser_id, uri)
+	(issued, id, loaded, enabled, task_id, subuser_id)
 	VALUES
-	(NOW(), 2, NOW(), true, 1, 1, 'asd.mp4')
-;
-
-INSERT INTO answer
-	(issued, id, loaded, enabled, task_id, subuser_id, uri)
-	VALUES
-	(NOW(), 3, NOW(), true, 3, 2, 'asdas.mp4');
+	(NOW(),1, NOW(), true, 1, 2)
 ;
 
 INSERT INTO answer
-        (issued, id, loaded, enabled, task_id, subuser_id, uri)
+	(issued, id, loaded, enabled, task_id, subuser_id)
+	VALUES
+	(NOW(), 2, NOW(), true, 1, 1)
+;
+
+INSERT INTO answer
+	(issued, id, loaded, enabled, task_id, subuser_id)
+	VALUES
+	(NOW(), 3, NOW(), true, 3, 2);
+;
+
+INSERT INTO answer
+        (issued, id, loaded, enabled, task_id, subuser_id)
         VALUES
-        (NOW(), 4, NOW(), false, 1, 2, 'asdasdsa.mp4');
+        (NOW(), 4, NOW(), false, 1, 2);
 ;
 
 
