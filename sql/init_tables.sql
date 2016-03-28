@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS category
     name VARCHAR(255) NOT NULL,
     PRIMARY KEY(id)
 );
-    
+
 CREATE TABLE IF NOT EXISTS subuser
 (
     id INT NOT NULL AUTO_INCREMENT,
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS task
     loaded DATETIME NOT NULL,
     enabled TINYINT(1) NOT NULL,
     category_id INT NOT NULL,
-    info VARCHAR(1000) NOT NULL DEFAULT 'Ei ole saatavilla kuvausta tehtävälle.',
+    info VARCHAR(1000) NOT NULL DEFAULT '',
     PRIMARY KEY(id)
 );
 
@@ -53,12 +53,12 @@ ALTER TABLE answer
     ADD FOREIGN KEY (task_id)
     REFERENCES task(id)
 ;
-    
+
 ALTER TABLE answer
     ADD FOREIGN KEY (subuser_id)
     REFERENCES subuser(id)
 ;
-    
+
 ALTER TABLE task
     ADD FOREIGN KEY (category_id)
     REFERENCES category(id)
