@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS answer
     enabled TINYINT(1) NOT NULL,
     task_id INT NOT NULL,
     subuser_id INT NOT NULL,
+    uri VARCHAR(255) NOT NULL,
     PRIMARY KEY(id)
 );
 
@@ -16,6 +17,7 @@ CREATE TABLE IF NOT EXISTS category
 (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
+    bg_uri VARCHAR(255) NOT NULL,   
     PRIMARY KEY(id)
 );
 
@@ -40,6 +42,7 @@ CREATE TABLE IF NOT EXISTS user
 CREATE TABLE IF NOT EXISTS task
 (
     id INT NOT NULL AUTO_INCREMENT,
+    uri VARCHAR(255) NOT NULL,
     loaded DATETIME NOT NULL,
     enabled TINYINT(1) NOT NULL,
     category_id INT NOT NULL,
