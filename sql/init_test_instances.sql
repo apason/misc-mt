@@ -1,103 +1,92 @@
-# Here we create a few test instances to the database. Instances should be created in correct order
-# eg. Categories should be created befoce tasks because tasks has reference to category.
+# Here we create a few test instances to the database. Instances should be created in the correct order.
 
-# Users and categories does not depend on any other tables so those are created first
+# Users and categories do not depend on any other tables so they are created first.
 
-# 3 user examples. 2 active and one banned. One active has already a token assigned.
-INSERT INTO user 
-	(id, email, password, enabled, create_time)
-	VALUES 
-	(1, "matti.meikalainen@gmail.com", "password1", true, NOW())
-;
-
-INSERT INTO user 
-	(id, email, password, enabled, create_time)
+# 3 user examples. 2 active and one banned.
+INSERT INTO user
+	(created, enabled, email, password)
 	VALUES
-	(2, "maija.meikalainen@helsinki.fi", "password2", true, NOW())
+	(NOW(), true, "matti.meikalainen@gmail.com", 'salasana1')
 ;
 
 INSERT INTO user
-	(id, email, password, enabled, create_time)
+	(created, enabled, email, password)
 	VALUES
-	(3, "trolli@peikko.banned", "password3", false, NOW())
+	(NOW(), true, "maija.meikalainen@helsinki.fi", 'salasana2')
 ;
 
-# 3 subuser test-examples pointing to different users. Two of them have the same nick but pointing to diferent user.
+INSERT INTO user
+	(created, enabled, email, password)
+	VALUES
+	(NOW(), false, "trolli.peikkonen@gmail.com", 'salasana3')
+;
 
+# 2 subuser examples.
 INSERT INTO subuser
-       (nick, user_id)
-       VALUES
-       ("Minna", 1)
+	(user_id, created, nick)
+	VALUES
+	(1, NOW(), "Lissu")
 ;
 
 INSERT INTO subuser
-       (nick, user_id)
-       VALUES
-       ("Minna", 2)
+	(user_id, created, nick)
+	VALUES
+	(2, NOW(), "Matti")
 ;
 
-INSERT INTO subuser
-       (nick, user_id)
-       VALUES
-       ("Pekka", 2)
-;       
-
-# 2 test categories.
+# 2 example categories. Note: Background images and icons have to be uploaded to S3 separately.
 INSERT INTO category
-	(id, name)
+	(created, uploaded, enabled, name, bg_uri, icon_uri)
 	VALUES
-	(1, 'test_category')
+	(NOW(), 1, 1, 'Fysiikka', 'category_bg_id_1.png', 'category_icon_id_1.png')
 ;
 
 INSERT INTO category
-	(id, name)
+	(created, uploaded, enabled, name, bg_uri, icon_uri)
 	VALUES
-	(2, 'fysiikka')
+	(NOW(), 1, 1, 'Kemia', 'category_bg_id_2.png', 'category_icon_id_2.png')
 ;
 
-# 3 task examples. One, id 3, has the default value (not assigned) for the field info.
+# 3 test tasks. Note: Icons and videos have to be uploaded to S3 separately.
 INSERT INTO task
-	(id, loaded, category_id, enabled, info)
+	(category_id, created, uploaded, enabled, name, info, uri, icon_uri)
 	VALUES
-	(1, NOW(), 1, true, "tehtävä1")
-;
-
-INSERT INTO task
-	(id, loaded, category_id, enabled, info)
-	VALUES
-	(2, NOW(), 1, false, "tehtävä2")
+	(1, NOW(), 1, 1, 'Jään sulaminen', 'Tehtävässä tutkitaan, kuinka jää sulaa.', 'task_id_1.webm', 'task_icon_id_1.png')
 ;
 
 INSERT INTO task
-	(id, loaded, category_id, enabled)
+	(category_id, created, uploaded, enabled, name, info, uri, icon_uri)
 	VALUES
-	(3, NOW(), 2, true)
+	(1, NOW(), 1, 1, 'Omenan putoaminen', 'Tehtävässä tutkitaan, kuinka omena putoaa.', 'task_id_2.webm', 'task_icon_id_2.png')
 ;
 
-# 4 test answers for enabled users.
-INSERT INTO answer
-	(issued, id, loaded, enabled, task_id, subuser_id)
+INSERT INTO task
+	(category_id, created, uploaded, enabled, name, uri, icon_uri)
 	VALUES
-	(NOW(),1, NOW(), true, 1, 2)
+	(2, NOW(), 1, 1, 'Sokerin liukeneminen', 'task_id_3.webm', 'task_icon_id_3.png')
 ;
 
+# 3 test answers. Videos / images have to be uploaded to S3 separately.
 INSERT INTO answer
-	(issued, id, loaded, enabled, task_id, subuser_id)
+	(task_id, subuser_id, created, uploaded, enabled, uri)
 	VALUES
-	(NOW(), 2, NOW(), true, 1, 1)
-;
-
-INSERT INTO answer
-	(issued, id, loaded, enabled, task_id, subuser_id)
-	VALUES
-	(NOW(), 3, NOW(), true, 3, 2);
+	(1, 1, NOW(), 1, 1, 'answer_suid_1_id_1.webm')
 ;
 
 INSERT INTO answer
-        (issued, id, loaded, enabled, task_id, subuser_id)
-        VALUES
-        (NOW(), 4, NOW(), false, 1, 2);
+	(task_id, subuser_id, created, uploaded, enabled, uri)
+	VALUES
+	(2, 1, NOW(), 1, 1, 'answer_suid_1_id_2.mp4')
 ;
 
+INSERT INTO answer
+	(task_id, subuser_id, created, uploaded, enabled, uri)
+	VALUES
+	(3, 2, NOW(), 1, 1, 'answer_suid_2_id_3.png')
+;
 
-
+INSERT INTO answer
+	(task_id, subuser_id, created, uploaded, enabled, uri)
+	VALUES
+	(3, 2, NOW(), 0, 0, 'answer_suid_2_id_4.mkv')
+;

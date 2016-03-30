@@ -4,46 +4,58 @@
 CREATE TABLE IF NOT EXISTS answer
 (
     id INT NOT NULL AUTO_INCREMENT,
-    issued DATETIME NOT NULL,
-    loaded DATETIME,
-    enabled TINYINT(1) NOT NULL,
     task_id INT NOT NULL,
-    subuser_id INT NOT NULL,
+    subuser_id INT NOT NULL,    
+    created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
+    uploaded TINYINT(1) NOT NULL DEFAULT 0,
+    enabled TINYINT(1) NOT NULL DEFAULT 0,
+    uri VARCHAR(255),
     PRIMARY KEY(id)
 );
 
 CREATE TABLE IF NOT EXISTS category
 (
     id INT NOT NULL AUTO_INCREMENT,
+    created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
+    uploaded TINYINT(1) NOT NULL DEFAULT 0,
+    enabled TINYINT(1) NOT NULL DEFAULT 0,
     name VARCHAR(255) NOT NULL,
+    bg_uri VARCHAR(255),
+    # animated_icon?
+    icon_uri VARCHAR(255),
     PRIMARY KEY(id)
 );
 
 CREATE TABLE IF NOT EXISTS subuser
 (
     id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,    
+    created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
     nick VARCHAR(255) NOT NULL,
-    user_id INT NOT NULL,
     PRIMARY KEY(id)
 );
 
 CREATE TABLE IF NOT EXISTS user
 (
     id INT NOT NULL AUTO_INCREMENT,
+    created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
+    enabled TINYINT(1) NOT NULL DEFAULT 0,    
     email VARCHAR(60) NOT NULL,
     password VARCHAR(128) NOT NULL,
-    enabled TINYINT(1) NOT NULL,
-    create_time DATETIME NOT NULL,
     PRIMARY KEY(id)
 );
 
 CREATE TABLE IF NOT EXISTS task
 (
     id INT NOT NULL AUTO_INCREMENT,
-    loaded DATETIME,
-    enabled TINYINT(1) NOT NULL,
-    category_id INT NOT NULL,
-    info VARCHAR(1000) NOT NULL DEFAULT '',
+	category_id INT NOT NULL,    
+    created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
+    uploaded TINYINT(1) NOT NULL DEFAULT 0,
+    enabled TINYINT(1) NOT NULL DEFAULT 0,
+	name VARCHAR(255) NOT NULL,
+    info VARCHAR(10000),
+	uri VARCHAR(255),    
+    icon_uri VARCHAR(255),
     PRIMARY KEY(id)
 );
 
