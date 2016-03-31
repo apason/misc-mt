@@ -21,11 +21,11 @@ INSERT INTO user
 	(NOW(), false, "trolli.peikkonen@gmail.com", 'salasana3')
 ;
 
-# 2 subuser examples.
+# 2 subuser examples. One has an avatar picture and the other not.
 INSERT INTO subuser
-	(user_id, created, nick)
+	(user_id, created, nick, avatar_url)
 	VALUES
-	(1, NOW(), "Lissu")
+	(1, NOW(), "Lissu", 'avatar_icon_id_1.png')
 ;
 
 INSERT INTO subuser

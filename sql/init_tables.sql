@@ -32,6 +32,7 @@ CREATE TABLE IF NOT EXISTS subuser
     user_id INT NOT NULL,    
     created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
     nick VARCHAR(255) NOT NULL,
+    avatar_url VARCHAR(255)
     PRIMARY KEY(id)
 );
 
@@ -48,13 +49,13 @@ CREATE TABLE IF NOT EXISTS user
 CREATE TABLE IF NOT EXISTS task
 (
     id INT NOT NULL AUTO_INCREMENT,
-	category_id INT NOT NULL,    
+    category_id INT NOT NULL,    
     created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
     uploaded TINYINT(1) NOT NULL DEFAULT 0,
     enabled TINYINT(1) NOT NULL DEFAULT 0,
-	name VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
     info VARCHAR(10000),
-	uri VARCHAR(255),    
+    uri VARCHAR(255),    
     icon_uri VARCHAR(255),
     PRIMARY KEY(id)
 );
