@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 mysql -u root --password="Mob11l1SON" < init_user_and_database.sql
 mysql -u mobiili -D mobiilitiedekerho --password="asd" < init_tables.sql
