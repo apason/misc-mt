@@ -47,7 +47,7 @@ INSERT INTO category
 	(NOW(), 1, 1, 'Kemia', 'category_bg_id_2.png', 'category_icon_id_2.png')
 ;
 
-# 3 test tasks. Note: Icons and videos have to be uploaded to S3 separately.
+# 3 test tasks. Last one is "not yet uploaded" -one.
 INSERT INTO task
 	(category_id, created, uploaded, enabled, name, info, uri, icon_uri)
 	VALUES
@@ -63,10 +63,10 @@ INSERT INTO task
 INSERT INTO task
 	(category_id, created, uploaded, enabled, name, uri, icon_uri)
 	VALUES
-	(2, NOW(), 1, 1, 'Sokerin liukeneminen', 'task_id_3.webm', 'task_icon_id_3.png')
+	(2, NOW(), 0, 0, 'Sokerin liukeneminen', 'task_id_3.webm', 'task_icon_id_3.png')
 ;
 
-# 3 test answers. Videos / images have to be uploaded to S3 separately.
+# 4 test answers. Last one is "not yet uploaded" -one.
 INSERT INTO answer
 	(task_id, subuser_id, created, uploaded, enabled, uri)
 	VALUES
