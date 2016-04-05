@@ -72,6 +72,12 @@ INSERT INTO task
 	(2, NOW(), 0, 0, 'Sokerin liukeneminen', 'task_id_3.webm', 'task_icon_id_3.png')
 ;
 
+INSERT INTO task
+	(category_id, created, uploaded, enabled, name, info, uri, icon_uri)
+	VALUES
+	(1, NOW(), 1, 1, 'Hankaussähkö', 'Paijataan kissaa ja katsotaan muodostuuko hankaussähköö.', 'task_id_4.webm', 'task_icon_id_4.png')
+;
+
 # 4 test answers. Last one is "not yet uploaded" -one.
 INSERT INTO answer
 	(task_id, subuser_id, created, uploaded, enabled, uri)
