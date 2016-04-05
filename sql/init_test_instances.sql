@@ -47,6 +47,12 @@ INSERT INTO category
 	(NOW(), 1, 1, 'Kemia', 'category_bg_id_2.png', 'category_icon_id_2.png')
 ;
 
+INSERT INTO category
+	(created, uploaded, enabled, name, bg_uri, icon_uri)
+	VALUES
+	(NOW(), 1, 1, 'Piirtämisen salat', 'category_bg_id_3.png', 'category_icon_id_3.png')
+;
+
 # 3 test tasks. Last one is "not yet uploaded" -one.
 INSERT INTO task
 	(category_id, created, uploaded, enabled, name, info, uri, icon_uri)
