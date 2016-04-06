@@ -6,20 +6,20 @@ CREATE TABLE IF NOT EXISTS answer
     id INT NOT NULL AUTO_INCREMENT,
     task_id INT NOT NULL,
     subuser_id INT NOT NULL,
-    created DATETIME NOT NULL, # DEFAULT NOW(),
+    created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP,
     uploaded TINYINT(1) NOT NULL DEFAULT 0,
     enabled TINYINT(1) NOT NULL DEFAULT 0,
     uri VARCHAR(255),
     PRIMARY KEY(id)
 );
 
-# like is reserved word in sql so lets use "slaikka" here
+# like is a reserved word in sql so lets use "slaikka" here!
 CREATE TABLE IF NOT EXISTS slaikka
 (
     id INT NOT NULL AUTO_INCREMENT,
     subuser_id INT NOT NULL,
     answer_id INT NOT NULL,
-    loaded DATETIME NOT NULL,
+    created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
     PRIMARY KEY(id)
 );
 

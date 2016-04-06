@@ -109,15 +109,23 @@ INSERT INTO answer
 	(3, 2, NOW(), 0, 0, 'answer_suid_2_id_4.mkv')
 ;
 
+# 2 test likes.
 INSERT INTO slaikka
-       (id, subuser_id, answer_id, loaded)
+       (id, subuser_id, answer_id, created)
        VALUES
        (1, 1, 1, NOW())
 ;       
 
-## Summary: After initialization there is entitys with following id:s
-## user_id:    1-3
-## subuser_id: 1-2
-## answer_id:  1-4
-## task_id:    1-3
-## slaikka_id: 1
+INSERT INTO slaikka
+       (id, subuser_id, answer_id, created)
+       VALUES
+       (2, 1, 2, NOW())
+;    
+
+## Summary: After the initialization there is the following amount of test-instances for each table (if "x" is the amount then ids are 1-"x"):
+## user table:                          3
+## subuser table:                       2
+## category table:                      3
+## task table:                          5
+## answer table:                        4
+## "like" table (aka "slaikka"):        2
