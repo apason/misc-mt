@@ -90,3 +90,16 @@ INSERT INTO answer
 	VALUES
 	(3, 2, NOW(), 0, 0, 'answer_suid_2_id_4.mkv')
 ;
+
+INSERT INTO slaikka
+       (id, subuser_id, answer_id, loaded)
+       VALUES
+       (1, 1, 1, NOW())
+;       
+
+## Summary: After initialization there is entitys with following id:s
+## user_id:    1-3
+## subuser_id: 1-2
+## answer_id:  1-4
+## task_id:    1-3
+## slaikka_id: 1
