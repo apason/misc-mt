@@ -21,7 +21,7 @@ INSERT INTO user
 	(NOW(), false, "trolli.peikkonen@gmail.com", 'salasana3')
 ;
 
-# 2 subuser examples. One has an avatar picture and the other not.
+# 2 subuser examples. One has an avatar picture and the other not. Note: Background avatar images have to be uploaded to S3 separately.
 INSERT INTO subuser
 	(user_id, created, nick, avatar_url)
 	VALUES
@@ -34,7 +34,7 @@ INSERT INTO subuser
 	(2, NOW(), "Matti")
 ;
 
-# 2 example categories. Note: Background images and icons have to be uploaded to S3 separately.
+# 3 example categories. Note: Background images and icons have to be uploaded to S3 separately.
 INSERT INTO category
 	(created, uploaded, enabled, name, bg_uri, icon_uri)
 	VALUES
@@ -47,7 +47,13 @@ INSERT INTO category
 	(NOW(), 1, 1, 'Kemia', 'category_bg_id_2.png', 'category_icon_id_2.png')
 ;
 
-# 3 test tasks. Last one is "not yet uploaded" -one.
+INSERT INTO category
+	(created, uploaded, enabled, name, bg_uri, icon_uri)
+	VALUES
+	(NOW(), 1, 1, 'Piirtämisen salat', 'category_bg_id_3.png', 'category_icon_id_3.png')
+;
+
+# 5 test tasks. 3rd one is "not yet uploaded" -one. Note: Videos and icons have to be uploaded to S3 separately.
 INSERT INTO task
 	(category_id, created, uploaded, enabled, name, info, uri, icon_uri)
 	VALUES
@@ -66,7 +72,19 @@ INSERT INTO task
 	(2, NOW(), 0, 0, 'Sokerin liukeneminen', 'task_id_3.webm', 'task_icon_id_3.png')
 ;
 
-# 4 test answers. Last one is "not yet uploaded" -one.
+INSERT INTO task
+	(category_id, created, uploaded, enabled, name, info, uri, icon_uri)
+	VALUES
+	(1, NOW(), 1, 1, 'Hankaussähkö', 'Paijataan kissaa ja katsotaan muodostuuko hankaussähköö.', 'task_id_4.webm', 'task_icon_id_4.png')
+;
+
+INSERT INTO task
+	(category_id, created, uploaded, enabled, name, info, uri, icon_uri)
+	VALUES
+	(1, NOW(), 1, 1, 'Kalojen uinti', 'Tuijotetaan kaloja ja päätellään niiden sosiaalinen asema.', 'task_id_5.webm', 'task_icon_id_5.png')
+;
+
+# 4 test answers. Last one is "not yet uploaded" -one. Note: Videos have to be uploaded to S3 separately.
 INSERT INTO answer
 	(task_id, subuser_id, created, uploaded, enabled, uri)
 	VALUES
