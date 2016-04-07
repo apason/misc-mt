@@ -1,6 +1,10 @@
 # Here we create a few test instances to the database. Instances should be created in the correct order.
-
 # Users and categories do not depend on any other tables so they are created first.
+
+# - Important note: DO NOT make a test instance of a table where exists both 'enabled' and 'uploaded' so that 'enabled' is true/1 but 'uploaded' is false/0.
+#   'Enabled' tells the client whether it is able or not to fecth data (or whether to do it or not if it is otherwise possible), so only when data has been already uploaded (to S3) it should be true.
+# - Important note: If 'uploaded' is true then urls should NOT be null but setted. (Also they should point to something valid, but for testing is possible to not be so -> to test Client software.)
+
 
 # 3 user examples. 2 active and one banned.
 INSERT INTO user
