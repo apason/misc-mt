@@ -6,23 +6,29 @@
 # - Important note: If 'uploaded' is true then urls should NOT be null but setted. (Also they should point to something valid, but for testing is possible to not be so -> to test Client software.)
 
 
-# 3 user examples. 2 active and one banned.
+# 4 user examples. 3 enabled and one banned. Enabled ones have Id's ranging 1-3 and privacy levels in the same order ranging 1-3 (banned 0).
 INSERT INTO user
-	(created, enabled, email, password)
+	(created, enabled, email, password, privacy_level)
 	VALUES
-	(NOW(), true, "matti.meikalainen@gmail.com", 'salasana1')
+	(NOW(), true, "matti.meikalainen@gmail.com", 'salasana1', 1)
 ;
 
 INSERT INTO user
-	(created, enabled, email, password)
+	(created, enabled, email, password, privacy_level)
 	VALUES
-	(NOW(), true, "maija.meikalainen@helsinki.fi", 'salasana2')
+	(NOW(), true, "maija.meikalainen@helsinki.fi", 'salasana2', 2)
 ;
 
 INSERT INTO user
-	(created, enabled, email, password)
+        (created, enabled, email, password, privacy_level)
+        VALUES
+        (NOW(), true, "Kakku.kakkulandia@kakku.kak", 'salasana2', 3)
+;
+
+INSERT INTO user
+	(created, enabled, email, password, privacy_level)
 	VALUES
-	(NOW(), false, "trolli.peikkonen@gmail.com", 'salasana3')
+	(NOW(), false, "trolli.peikkonen@gmail.com", 'salasana3', 0)
 ;
 
 # 2 subuser examples. One has an avatar picture and the other not. Note: Background avatar images have to be uploaded to S3 separately.
@@ -127,7 +133,7 @@ INSERT INTO slaikka
 ;    
 
 ## Summary: After the initialization there is the following amount of test-instances for each table (if "x" is the amount then ids are 1-"x"):
-## user table:                          3
+## user table:                          4
 ## subuser table:                       2
 ## category table:                      3
 ## task table:                          5
