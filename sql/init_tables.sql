@@ -71,6 +71,15 @@ CREATE TABLE IF NOT EXISTS task
     PRIMARY KEY(id)
 );
 
+## additional info table
+CREATE TABLE IF NOT EXISTS info
+(
+    s3_location VARCHAR(255) NOT NULL,
+    tasks_bucket VARCHAR(255) NOT NULL,
+    answers_bucket VARCHAR(255) NOT NULL,
+    graphics_bucket VARCHAR(255) NOT NULL,
+    eula VARCHAR(100000) NOT NULL
+);
 
 # Create FKs
 ALTER TABLE answer

@@ -6,7 +6,7 @@
 # - Important note: If 'uploaded' is true then urls should NOT be null but setted. (Also they should point to something valid, but for testing is possible to not be so -> to test Client software.)
 
 
-# 4 user examples. 3 enabled and one banned. Enabled ones have Id's ranging 1-3 and privacy levels in the same order ranging 1-3 (banned 0).
+# 4 user examples. 3 enabled and one banned. Enabled ones have Ids ranging 1-3 and privacy levels in the same order ranging 1-3 (banned 0).
 INSERT INTO user
 	(created, enabled, email, password, privacy_level)
 	VALUES
@@ -130,7 +130,19 @@ INSERT INTO slaikka
        (id, subuser_id, answer_id, created)
        VALUES
        (2, 1, 2, NOW())
-;    
+;
+
+## this is not actually a test instance, rather a default values
+INSERT INTO info
+       (s3_location,tasks_bucket, answers_bucket, graphics_bucket, eula)
+       VALUES (
+       	      "https://s3.eu-central-1.amazonaws.com/",
+	      "mobiilitiedekerho-answers",
+	      "mobiilitiedekerho-tasks",
+	      "mobiilitiedekerho-graphics",
+	      "Hyväksymällä tämän sitoudut siihen mitä me haluamme. Meillä ei ole mitään velvoitteita"
+	      );
+       
 
 ## Summary: After the initialization there is the following amount of test-instances for each table (if "x" is the amount then ids are 1-"x"):
 ## user table:                          4
