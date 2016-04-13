@@ -30,8 +30,8 @@ CREATE TABLE IF NOT EXISTS category
     uploaded TINYINT(1) NOT NULL DEFAULT 0,
     enabled TINYINT(1) NOT NULL DEFAULT 0,
     name VARCHAR(255) NOT NULL,
-    cordinate_x INT NOT NULL,
-    cordinate_y INT NOT NULL,
+    coordinate_x INT NOT NULL,
+    coordinate_y INT NOT NULL,
     bg_uri VARCHAR(255),
     # animated_icon?
     icon_uri VARCHAR(255),
@@ -112,4 +112,4 @@ ALTER TABLE slaikka
 ALTER TABLE slaikka
     ADD FOREIGN KEY (answer_id)
     REFERENCES answer(id)
-;    
+;

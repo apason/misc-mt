@@ -46,19 +46,19 @@ INSERT INTO subuser
 
 # 3 example categories. Note: Background images and icons have to be uploaded to S3 separately.
 INSERT INTO category
-	(created, uploaded, enabled, name, cordinate_x, cordinate_y, bg_uri, icon_uri)
+	(created, uploaded, enabled, name, coordinate_x, coordinate_y, bg_uri, icon_uri)
 	VALUES
 	(NOW(), 1, 1, 'Fysiikka', 100, 100, 'category_bg_id_1.png', 'category_icon_id_1.png')
 ;
 
 INSERT INTO category
-	(created, uploaded, enabled, name, cordinate_x, cordinate_y, bg_uri, icon_uri)
+	(created, uploaded, enabled, name, coordinate_x, coordinate_y, bg_uri, icon_uri)
 	VALUES
 	(NOW(), 1, 1, 'Kemia', 400, 500, 'category_bg_id_2.png', 'category_icon_id_2.png')
 ;
 
 INSERT INTO category
-	(created, uploaded, enabled, name, cordinate_x, cordinate_y, bg_uri, icon_uri)
+	(created, uploaded, enabled, name, coordinate_x, coordinate_y, bg_uri, icon_uri)
 	VALUES
 	(NOW(), 1, 1, 'Piirtämisen salat', 1000, 600, 'category_bg_id_3.png', 'category_icon_id_3.png')
 ;
@@ -124,7 +124,7 @@ INSERT INTO slaikka
        (id, subuser_id, answer_id, created)
        VALUES
        (1, 1, 1, NOW())
-;       
+;
 
 INSERT INTO slaikka
        (id, subuser_id, answer_id, created)
@@ -142,7 +142,7 @@ INSERT INTO info
 	      "mobiilitiedekerho-graphics",
 	      "Hyväksymällä tämän sitoudut siihen mitä me haluamme. Meillä ei ole mitään velvoitteita"
 	      );
-       
+
 
 ## Summary: After the initialization there is the following amount of test-instances for each table (if "x" is the amount then ids are 1-"x"):
 ## user table:                          4
