@@ -134,14 +134,19 @@ INSERT INTO likes
 
 ## this is not actually a test instance, rather a default values
 INSERT INTO info
-       (s3_location,tasks_bucket, answers_bucket, graphics_bucket, eula)
-       VALUES (
-       	      "https://s3.eu-central-1.amazonaws.com/",
-	      "mobiilitiedekerho-tasks",
-	      "mobiilitiedekerho-answers",
-	      "mobiilitiedekerho-graphics",
-	      "Hyväksymällä tämän sitoudut siihen mitä me haluamme. Meillä ei ole mitään velvoitteita"
-	      );
+            (s3_location,
+            tasks_bucket,
+            answers_bucket,
+            graphics_bucket,
+            eula)
+        VALUES (
+            "https://s3.eu-central-1.amazonaws.com/",
+            "mobiilitiedekerho-tasks",
+            "mobiilitiedekerho-answers",
+            "mobiilitiedekerho-graphics",
+            "Hyväksymällä tämän sitoudut siihen mitä me haluamme. Meillä ei ole mitään velvoitteita"
+        )
+        ;
 
 
 ## Summary: After the initialization there is the following amount of test-instances for each table (if "x" is the amount then ids are 1-"x"):
@@ -150,4 +155,6 @@ INSERT INTO info
 ## category table:                      3
 ## task table:                          5
 ## answer table:                        4
-## "like" table (aka "likes"):        2
+## likes table:                         2
+##
+## And the initial ('default') values of the info table.
