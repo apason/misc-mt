@@ -13,8 +13,8 @@ CREATE TABLE IF NOT EXISTS answer
     PRIMARY KEY(id)
 );
 
-# like is a reserved word in sql so lets use "slaikka" here!
-CREATE TABLE IF NOT EXISTS slaikka
+# like is a reserved word in sql so lets use "likes" here!
+CREATE TABLE IF NOT EXISTS likes
 (
     id INT NOT NULL AUTO_INCREMENT,
     subuser_id INT NOT NULL,
@@ -104,12 +104,12 @@ ALTER TABLE subuser
     REFERENCES user(id)
 ;
 
-ALTER TABLE slaikka
+ALTER TABLE likes
     ADD FOREIGN KEY (subuser_id)
     REFERENCES subuser(id)
 ;
 
-ALTER TABLE slaikka
+ALTER TABLE likes
     ADD FOREIGN KEY (answer_id)
     REFERENCES answer(id)
 ;
