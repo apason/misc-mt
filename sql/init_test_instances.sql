@@ -120,13 +120,13 @@ INSERT INTO answer
 ;
 
 # 2 test likes.
-INSERT INTO slaikka
+INSERT INTO likes
        (id, subuser_id, answer_id, created)
        VALUES
        (1, 1, 1, NOW())
 ;
 
-INSERT INTO slaikka
+INSERT INTO likes
        (id, subuser_id, answer_id, created)
        VALUES
        (2, 1, 2, NOW())
@@ -150,4 +150,4 @@ INSERT INTO info
 ## category table:                      3
 ## task table:                          5
 ## answer table:                        4
-## "like" table (aka "slaikka"):        2
+## "like" table (aka "likes"):        2
