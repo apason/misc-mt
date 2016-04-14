@@ -137,8 +137,8 @@ INSERT INTO info
        (s3_location,tasks_bucket, answers_bucket, graphics_bucket, eula)
        VALUES (
        	      "https://s3.eu-central-1.amazonaws.com/",
-	      "mobiilitiedekerho-answers",
 	      "mobiilitiedekerho-tasks",
+	      "mobiilitiedekerho-answers",
 	      "mobiilitiedekerho-graphics",
 	      "Hyväksymällä tämän sitoudut siihen mitä me haluamme. Meillä ei ole mitään velvoitteita"
 	      );
