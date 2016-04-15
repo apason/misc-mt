@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS user
     enabled TINYINT(1) NOT NULL DEFAULT 0,
     email VARCHAR(60) NOT NULL,
     password VARCHAR(128) NOT NULL,
-    privacy_level TINYINT(1) NOT NULL DEFAULT 0,
+    privacy_level SMALLINT NOT NULL DEFAULT 0,
     PRIMARY KEY(id)
 );
 
