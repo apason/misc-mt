@@ -80,7 +80,8 @@ CREATE TABLE IF NOT EXISTS info
     tasks_bucket VARCHAR(255) NOT NULL,
     answers_bucket VARCHAR(255) NOT NULL,
     graphics_bucket VARCHAR(255) NOT NULL,
-    eula VARCHAR(100000) NOT NULL
+    eula VARCHAR(100000) NOT NULL,
+    instructions VARCHAR(100000) NOT NULL
 );
 
 # Create FKs

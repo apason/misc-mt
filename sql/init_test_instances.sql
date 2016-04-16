@@ -138,13 +138,15 @@ INSERT INTO info
             tasks_bucket,
             answers_bucket,
             graphics_bucket,
-            eula)
+            eula,
+            instructions)
         VALUES (
             "https://s3.eu-central-1.amazonaws.com/",
             "mobiilitiedekerho-tasks",
             "mobiilitiedekerho-answers",
             "mobiilitiedekerho-graphics",
             "Hyväksymällä tämän sitoudut siihen mitä me haluamme. Meillä ei ole mitään velvoitteita"
+            "Koskettele asioita kunnes jotain tapahtuu :D"
         )
         ;
 
