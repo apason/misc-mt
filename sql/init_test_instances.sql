@@ -6,7 +6,7 @@
 # - Important note: If 'uploaded' is true then urls should NOT be null but setted. (Also they should point to something valid, but for testing is possible to not be so -> to test Client software.)
 
 
-# 4 user examples. 3 enabled and one banned. Enabled ones have Ids ranging 1-3 and privacy levels in the same order ranging 1-3 (banned 0).
+# 4 user examples. 3 enabled and one banned. Enabled ones have Ids ranging 1-3 and privacy levels in the same order ranging 1-3 (banned 0). The second one has pin-field setted to 1234.
 INSERT INTO user
 	(created, enabled, email, password, privacy_level)
 	VALUES
@@ -14,9 +14,9 @@ INSERT INTO user
 ;
 
 INSERT INTO user
-	(created, enabled, email, password, privacy_level)
+	(created, enabled, email, password, pin privacy_level)
 	VALUES
-	(NOW(), true, "maija.meikalainen@helsinki.fi", 'salasana2', 2)
+	(NOW(), true, "maija.meikalainen@helsinki.fi", 'salasana2', '1234', 2)
 ;
 
 INSERT INTO user
