@@ -30,8 +30,8 @@ CREATE TABLE IF NOT EXISTS category
     uploaded TINYINT(1) NOT NULL DEFAULT 0,
     enabled TINYINT(1) NOT NULL DEFAULT 0,
     name VARCHAR(255) NOT NULL,
-    coordinate_x INT NOT NULL,
-    coordinate_y INT NOT NULL,
+    coordinate_x INT,
+    coordinate_y INT,
     bg_uri VARCHAR(255),
     # animated_icon?
     icon_uri VARCHAR(255),
@@ -69,6 +69,8 @@ CREATE TABLE IF NOT EXISTS task
     enabled TINYINT(1) NOT NULL DEFAULT 0,
     name VARCHAR(255) NOT NULL,
     info VARCHAR(10000),
+    coordinate_x INT,
+    coordinate_y INT,
     uri VARCHAR(255),
     icon_uri VARCHAR(255),
     PRIMARY KEY(id)

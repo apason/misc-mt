@@ -65,33 +65,33 @@ INSERT INTO category
 
 # 5 test tasks. 3rd one is "not yet uploaded" -one. Note: Videos and icons have to be uploaded to S3 separately.
 INSERT INTO task
-	(category_id, created, uploaded, enabled, name, info, uri, icon_uri)
+	(category_id, created, uploaded, enabled, name, info, coordinate_x, coordinate_y, uri, icon_uri)
 	VALUES
-	(1, NOW(), 1, 1, 'Jään sulaminen', 'Tehtävässä tutkitaan, kuinka jää sulaa.', 'task_id_1.webm', 'task_icon_id_1.png')
+	(1, NOW(), 1, 1, 'Jään sulaminen', 'Tehtävässä tutkitaan, kuinka jää sulaa.', 100, 100, 'task_id_1.webm', 'task_icon_id_1.png')
 ;
 
 INSERT INTO task
-	(category_id, created, uploaded, enabled, name, info, uri, icon_uri)
+	(category_id, created, uploaded, enabled, name, info, coordinate_x, coordinate_y, uri, icon_uri)
 	VALUES
-	(1, NOW(), 1, 1, 'Omenan putoaminen', 'Tehtävässä tutkitaan, kuinka omena putoaa.', 'task_id_2.webm', 'task_icon_id_2.png')
+	(1, NOW(), 1, 1, 'Omenan putoaminen', 'Tehtävässä tutkitaan, kuinka omena putoaa.', 400, 500, 'task_id_2.webm', 'task_icon_id_2.png')
 ;
 
 INSERT INTO task
-	(category_id, created, uploaded, enabled, name, uri, icon_uri)
+	(category_id, created, uploaded, enabled, name, uri, coordinate_x, coordinate_y, icon_uri)
 	VALUES
-	(2, NOW(), 0, 0, 'Sokerin liukeneminen', 'task_id_3.webm', 'task_icon_id_3.png')
+	(2, NOW(), 0, 0, 'Sokerin liukeneminen', 'task_id_3.webm', 1000, 600, 'task_icon_id_3.png')
 ;
 
 INSERT INTO task
-	(category_id, created, uploaded, enabled, name, info, uri, icon_uri)
+	(category_id, created, uploaded, enabled, name, info, coordinate_x, coordinate_y, uri, icon_uri)
 	VALUES
-	(1, NOW(), 1, 1, 'Hankaussähkö', 'Paijataan kissaa ja katsotaan muodostuuko hankaussähköö.', 'task_id_4.webm', 'task_icon_id_4.png')
+	(1, NOW(), 1, 1, 'Hankaussähkö', 'Paijataan kissaa ja katsotaan muodostuuko hankaussähköö.', 1200, 800, 'task_id_4.webm', 'task_icon_id_4.png')
 ;
 
 INSERT INTO task
-	(category_id, created, uploaded, enabled, name, info, uri, icon_uri)
+	(category_id, created, uploaded, enabled, name, info, coordinate_x, coordinate_y, uri, icon_uri)
 	VALUES
-	(1, NOW(), 1, 1, 'Kalojen uinti', 'Tuijotetaan kaloja ja päätellään niiden sosiaalinen asema.', 'task_id_5.webm', 'task_icon_id_5.png')
+	(1, NOW(), 1, 1, 'Kalojen uinti', 'Tuijotetaan kaloja ja päätellään niiden sosiaalinen asema.', 1400, 1000, 'task_id_5.webm', 'task_icon_id_5.png')
 ;
 
 # 4 test answers. Last one is "not yet uploaded" -one. Note: Videos have to be uploaded to S3 separately.
