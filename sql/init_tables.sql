@@ -1,5 +1,6 @@
 # Create schemas
 
+
 # Create tables
 CREATE TABLE IF NOT EXISTS answer
 (
@@ -13,6 +14,7 @@ CREATE TABLE IF NOT EXISTS answer
     PRIMARY KEY(id)
 );
 
+
 # like is a reserved word in sql so lets use "likes" here!
 CREATE TABLE IF NOT EXISTS likes
 (
@@ -22,6 +24,7 @@ CREATE TABLE IF NOT EXISTS likes
     created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
     PRIMARY KEY(id)
 );
+
 
 CREATE TABLE IF NOT EXISTS category
 (
@@ -38,6 +41,7 @@ CREATE TABLE IF NOT EXISTS category
     PRIMARY KEY(id)
 );
 
+
 CREATE TABLE IF NOT EXISTS subuser
 (
     id INT NOT NULL AUTO_INCREMENT,
@@ -47,6 +51,7 @@ CREATE TABLE IF NOT EXISTS subuser
     avatar_url VARCHAR(255),
     PRIMARY KEY(id)
 );
+
 
 CREATE TABLE IF NOT EXISTS user
 (
@@ -59,6 +64,7 @@ CREATE TABLE IF NOT EXISTS user
     privacy_level SMALLINT NOT NULL DEFAULT 0,
     PRIMARY KEY(id)
 );
+
 
 CREATE TABLE IF NOT EXISTS task
 (
@@ -76,16 +82,14 @@ CREATE TABLE IF NOT EXISTS task
     PRIMARY KEY(id)
 );
 
+
 ## additional info table
 CREATE TABLE IF NOT EXISTS info
 (
-    s3_location VARCHAR(255) NOT NULL,
-    tasks_bucket VARCHAR(255) NOT NULL,
-    answers_bucket VARCHAR(255) NOT NULL,
-    graphics_bucket VARCHAR(255) NOT NULL,
     eula VARCHAR(100000) NOT NULL,
     instructions VARCHAR(100000) NOT NULL
 );
+
 
 # Create FKs
 ALTER TABLE answer
