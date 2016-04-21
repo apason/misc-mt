@@ -142,11 +142,13 @@ INSERT INTO likes
 ## this is not actually a test instance, rather the initial ('default') values
 INSERT INTO info (
                 eula,
-                instructions
+                instructions,
+                category_menu_bg_uri
             )
             VALUES (
                 "Hyväksymällä tämän sitoudut siihen mitä me haluamme. Meillä ei ole mitään velvoitteita.",
-                "Koskettele asioita kunnes jotain tapahtuu :D"
+                "Koskettele asioita kunnes jotain tapahtuu :D",
+                "category_menu_bg.png"
             )
 ;
 

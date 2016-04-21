@@ -87,7 +87,8 @@ CREATE TABLE IF NOT EXISTS task
 CREATE TABLE IF NOT EXISTS info
 (
     eula VARCHAR(100000) NOT NULL,
-    instructions VARCHAR(100000) NOT NULL
+    instructions VARCHAR(100000) NOT NULL,
+    category_menu_bg_uri VARCHAR(255)
 );
 
 
