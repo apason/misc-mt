@@ -15,7 +15,7 @@ INSERT INTO user
 ;
 
 INSERT INTO user
-        (created, enabled, email, password, pin privacy_level)
+        (created, enabled, email, password, pin, privacy_level)
         VALUES
         (NOW(), true, "maija.meikalainen@helsinki.fi", 'salasana2', '1234', 2)
 ;
