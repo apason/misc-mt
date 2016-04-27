@@ -2,8 +2,7 @@
 
 
 # Create tables
-CREATE TABLE IF NOT EXISTS answer
-(
+CREATE TABLE IF NOT EXISTS answer (
     id INT NOT NULL AUTO_INCREMENT,
     task_id INT NOT NULL,
     subuser_id INT NOT NULL,
@@ -13,22 +12,20 @@ CREATE TABLE IF NOT EXISTS answer
     answer_type VARCHAR(10) NOT NULL,
     uri VARCHAR(255),
     PRIMARY KEY(id)
-);
+) CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 
 # like is a reserved word in sql so lets use "likes" here!
-CREATE TABLE IF NOT EXISTS likes
-(
+CREATE TABLE IF NOT EXISTS likes (
     id INT NOT NULL AUTO_INCREMENT,
     subuser_id INT NOT NULL,
     answer_id INT NOT NULL,
     created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
     PRIMARY KEY(id)
-);
+) CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS category
-(
+CREATE TABLE IF NOT EXISTS category (
     id INT NOT NULL AUTO_INCREMENT,
     created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
     uploaded TINYINT(1) NOT NULL DEFAULT 0,
@@ -40,22 +37,20 @@ CREATE TABLE IF NOT EXISTS category
     # animated_icon?
     icon_uri VARCHAR(255),
     PRIMARY KEY(id)
-);
+) CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS subuser
-(
+CREATE TABLE IF NOT EXISTS subuser (
     id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
     created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
     nick VARCHAR(255) NOT NULL,
     avatar_url VARCHAR(255),
     PRIMARY KEY(id)
-);
+) CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS user
-(
+CREATE TABLE IF NOT EXISTS user (
     id INT NOT NULL AUTO_INCREMENT,
     created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
     enabled TINYINT(1) NOT NULL DEFAULT 0,
@@ -64,11 +59,10 @@ CREATE TABLE IF NOT EXISTS user
     pin VARCHAR(80),
     privacy_level SMALLINT NOT NULL DEFAULT 0,
     PRIMARY KEY(id)
-);
+) CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 
-CREATE TABLE IF NOT EXISTS task
-(
+CREATE TABLE IF NOT EXISTS task (
     id INT NOT NULL AUTO_INCREMENT,
     category_id INT NOT NULL,
     created DATETIME NOT NULL, # DEFAULT CURRENT_TIMESTAMP
@@ -81,16 +75,15 @@ CREATE TABLE IF NOT EXISTS task
     uri VARCHAR(255),
     icon_uri VARCHAR(255),
     PRIMARY KEY(id)
-);
+) CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 
 ## additional info table
-CREATE TABLE IF NOT EXISTS info
-(
+CREATE TABLE IF NOT EXISTS info (
     eula VARCHAR(100000) NOT NULL,
     instructions VARCHAR(100000) NOT NULL,
     category_menu_bg_uri VARCHAR(255)
-);
+) CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 
 # Create FKs
