@@ -101,27 +101,27 @@ INSERT INTO task
 
 # 4 test answers. Last one is "not yet uploaded" -one. Note: Videos have to be uploaded to S3 separately.
 INSERT INTO answer
-        (task_id, subuser_id, created, uploaded, enabled, uri)
+        (task_id, subuser_id, created, uploaded, enabled, answer_type, uri)
         VALUES
-        (1, 1, NOW(), 1, 1, 'answer_suid_1_id_1.webm')
+        (1, 1, NOW(), 1, 1, "video", 'answer_suid_1_id_1.webm')
 ;
 
 INSERT INTO answer
-        (task_id, subuser_id, created, uploaded, enabled, uri)
+        (task_id, subuser_id, created, uploaded, enabled, answer_type, uri)
         VALUES
-        (2, 1, NOW(), 1, 1, 'answer_suid_1_id_2.mp4')
+        (2, 1, NOW(), 1, 1, "video", 'answer_suid_1_id_2.mp4')
 ;
 
 INSERT INTO answer
-        (task_id, subuser_id, created, uploaded, enabled, uri)
+        (task_id, subuser_id, created, uploaded, enabled, answer_type, uri)
         VALUES
-        (3, 2, NOW(), 1, 1, 'answer_suid_2_id_3.png')
+        (3, 2, NOW(), 1, 1, "image", 'answer_suid_2_id_3.png')
 ;
 
 INSERT INTO answer
-        (task_id, subuser_id, created, uploaded, enabled, uri)
+        (task_id, subuser_id, created, uploaded, enabled, answer_type, uri)
         VALUES
-        (3, 2, NOW(), 0, 0, 'answer_suid_2_id_4.mkv')
+        (3, 2, NOW(), 0, 0, "video", 'answer_suid_2_id_4.mkv')
 ;
 
 
