@@ -85,7 +85,7 @@ INSERT INTO category
 ;
 
 
-# 5 test tasks. 3rd one is "not yet uploaded" -one. Note: Videos and icons have to be uploaded to S3 separately.
+# 9 test tasks. 3rd one is "not yet uploaded" -one. Note: Videos and icons have to be uploaded to S3 separately.
 INSERT INTO task
         (category_id, created, uploaded, enabled, name, info, coordinate_x, coordinate_y, uri, icon_uri)
         VALUES
@@ -114,6 +114,31 @@ INSERT INTO task
         (category_id, created, uploaded, enabled, name, info, coordinate_x, coordinate_y, uri, icon_uri)
         VALUES
         (1, NOW(), 1, 1, 'Kalojen uinti', 'Tuijotetaan kaloja ja päätellään niiden sosiaalinen asema.', 1400, 1000, 'task_id_5.webm', 'task_icon_id_5.png')
+;
+
+INSERT INTO task
+        (category_id, created, uploaded, enabled, name, info, coordinate_x, coordinate_y, uri, icon_uri)
+        VALUES
+        (5, NOW(), 1, 1, 'Vedenalainen maailma', 'Siellä on kaloja, kasveja ja reilusti roskaa!.', 200, 300, 'task_id_6.webm', 'task_icon_id_6.png')
+;
+
+INSERT INTO task
+        (category_id, created, uploaded, enabled, name, info, coordinate_x, coordinate_y, uri, icon_uri)
+        VALUES
+        (5, NOW(), 1, 1, 'Kakkua merellä', 'Miten kalat pistää poskeensa ruuan.', 600, 500, 'task_id_7.webm', 'task_icon_id_7.png')
+;
+
+INSERT INTO task
+        (category_id, created, uploaded, enabled, name, info, coordinate_x, coordinate_y, uri, icon_uri)
+        VALUES
+        (5, NOW(), 1, 1, 'Äyriäiset ärsyttää', 'Mutta hyvän makuista.', 900, 900, 'task_id_8.webm', 'task_icon_id_8.png')
+;
+
+
+INSERT INTO task
+        (category_id, created, uploaded, enabled, name, info, coordinate_x, coordinate_y, uri, icon_uri)
+        VALUES
+        (6, NOW(), 1, 1, 'Pilvessä ollaan!', 'Tutkitaan taivaatta!', 500, 500, 'task_id_9.webm', 'task_icon_id_9.png')
 ;
 
 
@@ -175,8 +200,8 @@ INSERT INTO info (
 ## Summary: After the initialization there is the following amount of test-instances for each table (if "x" is the amount then ids are 1-"x"):
 ## user table:                          4
 ## subuser table:                       2
-## category table:                      3
-## task table:                          5
+## category table:                      6
+## task table:                          9
 ## answer table:                        4
 ## likes table:                         2
 ##
