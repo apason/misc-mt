@@ -47,7 +47,7 @@ INSERT INTO subuser
 ;
 
 
-# 3 example categories. Note: Background images and icons have to be uploaded to S3 separately.
+# 6 example categories. Note: Background images and icons have to be uploaded to S3 separately.
 INSERT INTO category
         (created, uploaded, enabled, name, coordinate_x, coordinate_y, bg_uri, icon_uri)
         VALUES
@@ -64,6 +64,24 @@ INSERT INTO category
         (created, uploaded, enabled, name, coordinate_x, coordinate_y, bg_uri, icon_uri)
         VALUES
         (NOW(), 1, 1, 'Piirtämisen salat', 1000, 600, 'category_bg_id_3.png', 'category_icon_id_3.png')
+;
+
+INSERT INTO category
+        (created, uploaded, enabled, name, coordinate_x, coordinate_y, bg_uri, icon_uri)
+        VALUES
+        (NOW(), 1, 1, 'Lintujen tutkiminen', 800, 300, 'category_bg_id_4.png', 'category_icon_id_4.png')
+;
+
+INSERT INTO category
+        (created, uploaded, enabled, name, coordinate_x, coordinate_y, bg_uri, icon_uri)
+        VALUES
+        (NOW(), 1, 1, 'Merenelävien mysteerit', 400, 100, 'category_bg_id_5.png', 'category_icon_id_5.png')
+;
+
+INSERT INTO category
+        (created, uploaded, enabled, name, coordinate_x, coordinate_y, bg_uri, icon_uri)
+        VALUES
+        (NOW(), 1, 1, 'Pilvessä ollaan!', 1100, 900, 'category_bg_id_6.png', 'category_icon_id_6.png')
 ;
 
 
