@@ -1,0 +1,56 @@
+# Nginx configuration
+# /etc/nginx/sites-enabled/mobiilitiedekerho
+
+# limit_req_zone $binary_remote_addr zone=ratelimit:10m rate=5r/s;
+
+server {
+    listen [insert_backend_port_number_here];
+    server_name [insert_public_host_name_here];
+
+    ssl_certificate /etc/letsencrypt/live/[insert_public_host_name_here]/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/[insert_public_host_name_here]/privkey.pem;
+
+    ssl on;
+
+    access_log /var/log/nginx/mobiilitiedekerho.access.log;
+    error_log /var/log/nginx/mobiilitiedekerho.error.log;
+
+    location / {
+      proxy_pass http://localhost:4567;
+      proxy_read_timeout 90;
+      # limit_req zone=ratelimit burst=5;
+    }
+}
+
+server {
+    listen [insert_admin_interface_port_number_here];
+    server_name [insert_public_host_name_here];
+
+    ssl_certificate /etc/letsencrypt/live/[insert_public_host_name_here]/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/[insert_public_host_name_here]/privkey.pem;
+    ssl on;
+
+    auth_basic "Mobiilitiedekerho";
+    auth_basic_user_file [insert_path_to_password_file_here];
+
+    rewrite 301 https://[insert_public_host_name_here]$request_uri permanent;
+
+    # root directive should be global
+    root [insert_path_to_admin_interface_webroot_here];
+    index index.php;
+
+    access_log /var/log/nginx/mobiilitiedekerho.admin.access.log;
+    error_log /var/log/nginx/mobiilitiedekerho.admin.error.log;
+
+    location / {
+        try_files $uri /index.php?$args;
+    }
+
+    location ~ \.php$ {
+        try_files $uri =404;
+        include /etc/nginx/fastcgi_params;
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index   index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+}
