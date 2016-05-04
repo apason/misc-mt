@@ -181,21 +181,9 @@ INSERT INTO likes
        (2, 1, 2, NOW())
 ;
 
-
-## this is not actually a test instance, rather the initial ('default') values
-INSERT INTO info (
-                eula,
-                instructions,
-                category_menu_bg_uri
-            )
-            VALUES (
-                "Hyväksymällä tämän sitoudut siihen mitä me haluamme. Meillä ei ole mitään velvoitteita.",
-                "Koskettele asioita kunnes jotain tapahtuu :D",
-                "category_menu_bg.png"
-            )
-;
-
-
+INSERT INTO info (id, info_text) VALUES ("eula", "Palvelun käyttöehdot");
+INSERT INTO info (id, info_text) VALUES ("instructions", "Käyttöohjeet");
+INSERT INTO info (id, info_text) VALUES ("category_menu_bg_uri", "category_menu_bg.png");
 
 ## Summary: After the initialization there is the following amount of test-instances for each table (if "x" is the amount then ids are 1-"x"):
 ## user table:                          4

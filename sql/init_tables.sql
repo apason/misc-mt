@@ -77,14 +77,11 @@ CREATE TABLE IF NOT EXISTS task (
     PRIMARY KEY(id)
 ) CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-
-## additional info table
 CREATE TABLE IF NOT EXISTS info (
-    eula VARCHAR(100000) NOT NULL,
-    instructions VARCHAR(100000) NOT NULL,
-    category_menu_bg_uri VARCHAR(255)
+  id VARCHAR(255) NOT NULL,
+  info_text VARCHAR(10000) NOT NULL,
+  PRIMARY KEY(id)
 ) CHARACTER SET utf8 COLLATE utf8_general_ci;
-
 
 # Create FKs
 ALTER TABLE answer
