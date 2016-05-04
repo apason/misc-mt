@@ -181,9 +181,13 @@ INSERT INTO likes
        (2, 1, 2, NOW())
 ;
 
+
+## Test instances for info table. Note: these are not completely test instances since they are rather some initial values.
 INSERT INTO info (id, info_text) VALUES ("eula", "Palvelun käyttöehdot");
 INSERT INTO info (id, info_text) VALUES ("instructions", "Käyttöohjeet");
 INSERT INTO info (id, info_text) VALUES ("category_menu_bg_uri", "category_menu_bg.png");
+
+
 
 ## Summary: After the initialization there is the following amount of test-instances for each table (if "x" is the amount then ids are 1-"x"):
 ## user table:                          4
@@ -193,4 +197,4 @@ INSERT INTO info (id, info_text) VALUES ("category_menu_bg_uri", "category_menu_
 ## answer table:                        4
 ## likes table:                         2
 ##
-## And the initial ('default') values of the info table.
+## And some initial values for the info table.
