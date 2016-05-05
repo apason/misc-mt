@@ -1,6 +1,7 @@
 # misc-mt
 
-This repository contains all the SQL- and shell-scripts used with the back-end server. As well as sample S3 policy files.
+This repository contains all the SQL- and shell-scripts used with the back-end server.
+As well as sample S3 policy files and a sample ngnix config files.
 
 ##SQL-directory#
 - Contains SQL-scripts to start the database and create a user to it (or clear the database or the user)
